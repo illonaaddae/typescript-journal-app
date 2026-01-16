@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                    // Modern JavaScript features
+    "module": "ES2020",                    // Use ES modules
+    "lib": ["ES2020", "DOM"],              // Include DOM types for browser
+    "outDir": "./dist",                    // Compiled JS goes here
+    "rootDir": "./src",                    // Source TS files location
+    "strict": true,                        // Enable ALL strict type checks
+    "esModuleInterop": true,               
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
