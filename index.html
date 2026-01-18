@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Journal - Track Your Mood</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="app-header">
+        <h1>📔 My Mood Journal</h1>
+        <p>Track your thoughts and emotions</p>
+      </header>
+      <!-- Entry Form -->
+      <section class="entry-form-section">
+        <form id="entry-form">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Give your entry a title..."
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="content">How are you feeling?</label>
+            <textarea
+              id="content"
+              name="content"
+              rows="4"
+              placeholder="Write your thoughts here..."
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label>Your Mood</label>
+            <div class="mood-selector">
+              <label class="mood-option">
+                <input type="radio" name="mood" value="happy" required />
+                <span class="mood-label">😊 Happy</span>
+              </label>
+              <label class="mood-option">
+                <input type="radio" name="mood" value="sad" />
+                <span class="mood-label">😢 Sad</span>
+              </label>
+              <label class="mood-option">
+                <input type="radio" name="mood" value="motivated" />
+                <span class="mood-label">💪 Motivated</span>
+              </label>
+              <label class="mood-option">
+                <input type="radio" name="mood" value="stressed" />
+                <span class="mood-label">😰 Stressed</span>
+              </label>
+              <label class="mood-option">
+                <input type="radio" name="mood" value="calm" />
+                <span class="mood-label">😌 Calm</span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary">Save Entry</button>
+        </form>
+      </section>
+      <!-- Filters and Search -->
+      <section class="controls">
+        <div class="filter-section">
+          <h3>Filter by Mood:</h3>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="happy">😊 Happy</button>
+            <button class="filter-btn" data-filter="sad">😢 Sad</button>
+            <button class="filter-btn" data-filter="motivated">
+              💪 Motivated
+            </button>
+            <button class="filter-btn" data-filter="stressed">
+              😰 Stressed
+            </button>
+            <button class="filter-btn" data-filter="calm">😌 Calm</button>
+          </div>
+        </div>
+        <div class="search-section">
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Search entries..."
+            class="search-input"
+          />
+        </div>
+      </section>
+      <!-- Entries Display -->
+      <section id="entries-container" class="entries-grid">
+        <!-- Entries will be rendered here by ui.ts -->
+      </section>
+    </div>
+    <!-- Import compiled JavaScript modules -->
+    <script type="module" src="dist/journal.js"></script>
+    <script type="module">
+      import { init } from "./dist/journal.js";
+      init();
+    </script>
+  </body>
+</html>

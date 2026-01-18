@@ -1,5 +1,4 @@
-import { json } from "stream/consumers";
-import { JournalEntry, Journal } from "./types";
+import { JournalEntry, Journal } from "./types.js";
 
 const STORAGE_KEY = "journal_entries";
 
@@ -30,10 +29,21 @@ export function loadEntries(): Journal {
 }
 
 export function saveEntries(entries: Journal): void {
-    try {
-        const serialized = JSON.stringify(entries);
-        localStorage.setItem(STORAGE_KEY, serialized);
-    } catch (error) {
-        console.error("Failed to save journal entries", error);
-    }
+  try {
+    const serialized = JSON.stringify(entries);
+    localStorage.setItem(STORAGE_KEY, serialized);
+  } catch (error) {
+    console.error("Failed to save journal entries", error);
+  }
+}
+
+// Runtime validation function
+function isJournalEntry(obj: any): obj is JournalEntry {
+  return (
+    typeof obj.id === "string" &&
+    typeof obj.title === "string" &&
+    typeof obj.content === "string" &&
+    typeof obj.mood === "string" &&
+    typeof obj.timestamp === "number"
+  );
 }

@@ -4,11 +4,11 @@ A modern, dynamic Journal Application built with TypeScript, focusing on type sa
 
 ## Features
 
-- ✨ Type-safe journal entry management
-- 💾 Local storage persistence
-- 🎭 Mood tracking with enum types
-- 📝 Create, read, and manage journal entries
-- 🔒 Strict TypeScript type checking
+- Type-safe journal entry management
+- Local storage persistence
+- Mood tracking with enum types
+- Create, read, and manage journal entries
+- Strict TypeScript type checking
 
 ## Project Structure
 
@@ -64,19 +64,19 @@ The application uses a robust type system with:
 
 ## What's Implemented
 
-✅ Type definitions (`types.ts`)
+Type definitions (`types.ts`)
 
 - Mood enum
 - JournalEntry interface
 - Helper types and generic functions
 
-✅ Storage layer (`storage.ts`)
+Storage layer (`storage.ts`)
 
 - Load journal entries from LocalStorage
 - Save journal entries to LocalStorage
 - Type guards and error handling
 
-🚧 In Progress
+  In Progress
 
 - Core journal logic
 - User interface
