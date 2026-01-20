@@ -70,7 +70,7 @@ function editEntry(id: string): void {
   // Populate the form with existing data
   const titleInput = document.getElementById("title") as HTMLInputElement;
   const contentInput = document.getElementById(
-    "content"
+    "content",
   ) as HTMLTextAreaElement;
   const moodInputs =
     document.querySelectorAll<HTMLInputElement>('input[name="mood"]');
@@ -113,7 +113,7 @@ function getFilteredEntries(): Journal {
     filtered = filtered.filter(
       (entry) =>
         entry.title.toLowerCase().includes(query) ||
-        entry.content.toLowerCase().includes(query)
+        entry.content.toLowerCase().includes(query),
     );
   }
 
@@ -171,7 +171,7 @@ function setupFilters(): void {
  */
 function setupSearch(): void {
   const searchInput = document.getElementById(
-    "search-input"
+    "search-input",
   ) as HTMLInputElement;
 
   if (searchInput) {
@@ -211,7 +211,7 @@ function setupEntryActions(): void {
  * Initialize the application
  */
 export function init(): void {
-  console.log("🚀 Initializing Journal App...");
+  console.log("Initializing Journal App...");
 
   // Load entries from localStorage
   entries = loadEntries();
@@ -235,7 +235,7 @@ export function init(): void {
   // Set up entry actions (edit/delete)
   setupEntryActions();
 
-  console.log("✅ Journal App initialized successfully!");
+  console.log("Journal App initialized successfully!");
 }
 
 // Auto-initialize when the DOM is ready
