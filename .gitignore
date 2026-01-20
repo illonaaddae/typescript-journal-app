@@ -4,8 +4,7 @@ node_modules/
 # Dependencies
 package-lock.json
 
-# Build outputs
-dist/
+
 
 # IDE and Editor files
 .vscode/
